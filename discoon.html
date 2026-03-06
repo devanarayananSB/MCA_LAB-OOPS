@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Team Agreement</title>
+
+    <style>
+        :root {
+            --gold-accent: #c5a059;
+            --deep-slate: #1c1f22;
+            --money-green: #2d3e2d;
+            --border-color: #d1d1d1;
+        }
+
+        body {
+            font-family: 'Garamond', serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--deep-slate);
+        }
+
+        .contract-card {
+            background: #ffffff;
+            width: 95%;
+            max-width: 900px;
+            padding: 60px;
+            position: relative;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Subtle background currency number */
+        .contract-card::before {
+            content: "100";
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            font-size: 420px;
+            font-weight: bold;
+            color: rgba(45, 62, 45, 0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Currency Image Placement */
+        .currency-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .currency-image img {
+            max-width: 100%;
+            width: 600px;
+            opacity: 0.95;
+            filter: grayscale(100%) contrast(110%);
+        }
+
+        .policy-box {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.92);
+            max-height: 320px;
+            overflow-y: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .policy-box h3 {
+            margin-top: 25px;
+            color: var(--money-green);
+        }
+
+        .form-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        input[type="text"], input[type="date"] {
+            padding: 15px;
+            border: none;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 16px;
+            background: transparent;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--money-green);
+        }
+
+        .checkbox-row {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .checkbox-row input {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--money-green);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: var(--deep-slate);
+            color: white;
+            padding: 20px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .submit-btn:hover {
+            background: var(--money-green);
+            letter-spacing: 4px;
+        }
+
+        .serial {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-family: monospace;
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contract-card">
+
+    <!-- Currency Image -->
+    <div class="currency-image">
+        <img src="currency-image.jpg" alt="Federal Design Note">
+    </div>
+
+    <!-- Protocols -->
+    <div class="policy-box">
+        <h3>Design Team Protocol I: Confidentiality & Ownership</h3>
+        <p>All creative assets, concepts, drafts, and strategic materials shared within the design team are confidential. No work may be redistributed, reused, or disclosed without explicit authorization.</p>
+
+        <h3>Protocol II: Creative Integrity</h3>
+        <p>Design decisions must align with approved brand standards, visual systems, and project scope. Unauthorized deviations, speculative work, or unapproved revisions are prohibited.</p>
+
+        <h3>Protocol III: Communication Standards</h3>
+        <p>All feedback, revisions, and approvals must be documented through official communication channels. Verbal approvals are not considered binding.</p>
+
+        <h3>Protocol IV: Delivery & Version Control</h3>
+        <p>Final assets must be delivered in agreed formats, clearly labeled, and version-controlled. The design team is responsible for maintaining organized archives.</p>
+
+        <h3>Protocol V: Professional Conduct</h3>
+        <p>All collaborators are expected to maintain professional behavior, respect deadlines, and uphold the financial and reputational integrity of the project.</p>
+    </div>
+
+    <!-- Signature Form -->
+    <form class="form-grid">
+        <div class="input-group">
+            <label>Authorized Name</label>
+            <input type="text" placeholder="Design Lead / Client" required>
+        </div>
+
+        <div class="input-group">
+            <label>Agreement Date</label>
+            <input type="date" required>
+        </div>
+
+        <div class="checkbox-row">
+            <input type="checkbox" id="policy-check" required>
+            <label for="policy-check">I acknowledge and accept all design team protocols and responsibilities.</label>
+        </div>
+
+        <button type="submit" class="submit-btn">EXECUTE AGREEMENT</button>
+    </form>
+
+    <div class="serial">Ref No: DESIGNS-2026-KB41524052B</div>
+
+</div>
+
+</body>
+</html>
