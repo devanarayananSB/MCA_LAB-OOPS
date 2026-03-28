@@ -18,7 +18,7 @@ class Student extends Teacher {
 
 class Multilevel {
     public static void main(String args[]) {
-        Student ob = new Student();
+        Student ob = new Student(); 
         ob.display();
     }
-}
+}   
